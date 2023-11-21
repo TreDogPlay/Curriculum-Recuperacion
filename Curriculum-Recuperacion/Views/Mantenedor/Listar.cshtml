@@ -1,0 +1,84 @@
+﻿@model List<ContactoModel>
+@{
+    ViewData["Title"] = "Listar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">
+        <i class="bi bi-card-list"></i>
+        Lista curriculum
+    </h5>
+    <div class="card-body">
+        <a asp-action="Guardar" asp-controller="Mantenedor" class="btn btn-success">
+            <i class="bi bi-plus-circle"></i>
+            Crear nuevo
+        </a>
+       <hr />
+       <table class="table table-bordered">
+           <thead>
+               <tr>
+                    <th>
+                        <i class="bi bi-person-circle"></i>
+                        Nombre
+                    </th>
+                    <th>
+                        <i class="bi bi-person-workspace"></i>
+                        Titulo
+                    </th>
+                    <th>
+                        <i class="bi bi-telephone-fill"></i>
+                        Telefono
+                    </th>
+                    <th>
+                        <i class="bi bi-envelope"></i>
+                        Correo
+                    </th>
+                    <th>
+                        <i class="bi bi-browser-chrome"></i>
+                        WebSite
+                    </th>
+                    <th>
+                        <i class="bi bi-camera-fill"></i>
+                        Foto
+                    </th>
+                   <th></th>
+               </tr>
+           </thead>
+           <tbody>
+                
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Titulo</td>
+                            <td>@item.Telefono</td>
+                            <td>@item.Correo</td>
+                            <td>@item.Email</td>
+                            <td>
+                            <img src="@item.Foto" />
+                            </td>
+                            <td>
+                                <a asp-action="Editar" asp-controller="Mantenedor" class="btn btn-primary btn-sm" asp-route-IdContacto="@item.IdContacto">
+                                    <i class="bi bi-pencil-square"></i>
+                                    Editar
+                                </a>
+                                <a asp-action="Eliminar" asp-controller="Mantenedor" class="btn btn-danger btn-sm" asp-route-IdContacto="@item.IdContacto">
+                                    <i class="bi bi-x-circle"></i>
+                                    Eliminar
+                                </a>
+                                <a asp-action="Detalle" asp-controller="Mantenedor" class="btn btn-outline-info btn-sm" asp-route-IdContacto="@item.IdContacto">
+                                    Detalle
+                                </a>
+                                <a asp-action="Ver" asp-controller="Mantenedor" class="btn btn-outline-info btn-sm" asp-route-IdContacto="@item.IdContacto">
+                                    Ver
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                
+            </tbody>
+       </table>
+    </div>
+</div>
+

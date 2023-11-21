@@ -1,0 +1,35 @@
+﻿namespace Curriculum_Recuperacion.wwwroot.css
+
+body {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.container {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+    font-size: 16px;
+}
+
+    .list-group-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .list-group-item:nth-child(even) {
+        background-color: #e9ecef;
+    }
